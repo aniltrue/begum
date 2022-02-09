@@ -11,6 +11,8 @@ public class QuestionMain {
         items.add(new Item(1, 12, 13.5));
         items.add(new Item(2, 13, 12.5));
 
+        items.get(2).setWeight(11.5);
+
         // value / weight, büyükten küçüğe sırala
 
         sort(items);

@@ -1,5 +1,7 @@
 package classes;
 
+import java.util.ArrayList;
+
 public class Student {
     public static int COUNTER = 0;
 
@@ -8,11 +10,13 @@ public class Student {
     private String name;
     private int grade;
     private int id;
+    private ArrayList<Course> courses;
 
     public Student(String name) {
         this.name = name;
         this.grade = 0;
         this.id = COUNTER++;
+        this.courses = new ArrayList<>();
     }
 
     public Student(String name, int grade) {
@@ -20,6 +24,7 @@ public class Student {
         this.grade = grade;
         this.id = COUNTER;
         COUNTER += 1;
+        this.courses = new ArrayList<>();
     }
 
     public String getName() {
@@ -36,6 +41,10 @@ public class Student {
 
     public int getId() {
         return id;
+    }
+
+    void addCourse(Course course) {
+        this.courses.add(course);
     }
 
     public void print() {

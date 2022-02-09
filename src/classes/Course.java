@@ -13,6 +13,8 @@ public class Course {
     public Course(String name, Teacher teacher) {
         this.name = name;
         this.teacher = teacher;
+
+        this.teacher.addCourse(this);
         students = new ArrayList<>();
     }
 
@@ -66,13 +68,25 @@ public class Course {
 
     public void add(Student student) {
         students.add(student);
+        student.addCourse(this);
     }
 
     public Student get(int index) {
         return students.get(index);
     }
 
-    public double getAverage() {
+    public double getStdev() {
+        double mean = getAverage();
+        double sum = 0;
+
+        for (int i = 0; i < students.size(); i++) {
+            sum += Math.pow(students.get(i).getGrade() - mean, 2);
+        }
+
+        return Math.sqrt(sum / students.size());
+    }
+
+    private double getAverage() {
         double sum = 0;
 
         for (int i = 0; i < students.size(); i++) {

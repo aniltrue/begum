@@ -10,6 +10,8 @@ public class Factorial {
         printCommon(arr1, arr2); // Ali Ayşe
 
         System.out.println(getMiddle("Ali"));
+        String str = "Veli";
+        getMiddle(str);
         System.out.println("Ali".charAt(2));
     }
 
@@ -21,6 +23,14 @@ public class Factorial {
         // 3!=6
         // 4!=24
         // ...
+
+        // f(n) = {}
+
+        // g(n, m) =  n! / m!*(n-m)!
+
+        // g(n, m) = f(n) / (f(m) * f(n-m))
+
+        // h(x)
     }
 
 

@@ -2,6 +2,8 @@ package gur;
 
 import gurobi.*;
 
+import java.util.ArrayList;
+
 public class GurobiExp2 {
     /*
         PAR: C[i]: i. çalışanın kapasitesine
@@ -29,9 +31,12 @@ public class GurobiExp2 {
         int J = d.length; // iş sayısı
 
         GRBVar[][] X = new GRBVar[I][J];
+        // ArrayList<ArrayList<GRBVar>> X = new ArrayList<>();
 
         for (int i = 0; i < I; i++) {
+            // X.add(new ArrayList<>());
             for (int j = 0; j < J; j++) {
+                // X.get(i).add(model.addVar(0, 1, 0, GRB.BINARY, "X_" + i + "_" + j));
                 X[i][j] = model.addVar(0, 1, 0, GRB.BINARY, "X_" + i + "_" + j);
             }
         }
